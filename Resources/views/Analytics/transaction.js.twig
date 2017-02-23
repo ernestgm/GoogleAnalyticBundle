@@ -44,7 +44,8 @@
     'affiliation': '{{ transaction.affiliation | escape('js') }}', // Affiliation or store name OPTIONAL
     'revenue': '{{ transaction.revenue | escape('js') }}',         // Revenue
     'shipping': '{{ transaction.shipping | escape('js') }}',       // Shipping OPTIONAL
-    'tax': '{{ transaction.tax | escape('js') }}'                  // Tax OPTIONAL
+    'tax': '{{ transaction.tax | escape('js') }}',                 // Tax OPTIONAL
+    'currency': '{{ transaction.currency | escape('js') }}'        // Currency OPTIONAL
   });
   {% if google_analytics.hasItems %}
   {% for item in google_analytics.items %}
@@ -54,7 +55,8 @@
     'sku': '{{ item.id | escape('js') }}',           // SKU/code
     'category': '{{ item.category | escape('js') }}', // Category or variation
     'price': '{{ item.price | escape('js') }}',       // Unit price
-    'quantity': '{{ item.quantity | escape('js') }}'  // Quantity
+    'quantity': '{{ item.quantity | escape('js') }}',  // Quantity
+    'currency': '{{ item.currency | escape('js') }}'  // Quantity
   });
   {% endfor %}
   {% endif %}

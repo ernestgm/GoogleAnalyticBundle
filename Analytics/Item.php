@@ -181,7 +181,8 @@ class Item extends CommonProduct
             'price' => $this->price,
             'quantity' => $this->quantity,
             'coupon' => $this->coupon,
-            'position' => $this->position
+            'position' => $this->position,
+            'currency' => $this->currency
         );
     }
 
@@ -225,6 +226,9 @@ class Item extends CommonProduct
         }
         if (isset($data['position'])) {
             $this->position = $data['position'];
+        }
+        if (isset($data['currency'])) {
+            $this->currency = $data['currency'];
         }
     }
 }

@@ -17,6 +17,23 @@ class Transaction
     protected $state;
     protected $tax;
     protected $total;
+    protected $currency;
+
+    /**
+     * @return mixed
+     */
+    public function getCurrency()
+    {
+        return $this->currency;
+    }
+
+    /**
+     * @param mixed $currency
+     */
+    public function setCurrency($currency)
+    {
+        $this->currency = $currency;
+    }
 
     public function setAffiliation($affiliation)
     {
@@ -145,7 +162,8 @@ class Transaction
             'shipping' => $this->shipping,
             'state' => $this->state,
             'tax' => $this->tax,
-            'total' => $this->total
+            'total' => $this->total,
+            'currency' => $this->currency
         );
     }
 
@@ -183,6 +201,9 @@ class Transaction
         }
         if (isset($data['total'])) {
             $this->total = $data['total'];
+        }
+        if (isset($data['currency'])) {
+            $this->currency = $data['currency'];
         }
     }
 }
